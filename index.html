@@ -1,0 +1,58 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>六四班同学录</title>  
+    <style>  
+        body{  
+            margin: 0;  
+            height: 100vh;  
+            background-color: #eee;  
+        }  
+        * {  
+           border: 1px solid black;  
+        }  
+        .flex{  
+            display: flex;  
+        }  
+        .baise{  
+            background-color: white;  
+        }  
+        .flexl {  
+            flex: 1;  
+        }  
+        .column{  
+            flex-direction: column;  
+        }  
+        .mg8 {  
+            margin: 8px;  
+        }  
+        .mgr8{  
+            margin-right: 8px;  
+        }  
+        .mgt8{  
+            margin-top: 8px;  
+        }  
+    </style>  
+</head>  
+<body class="flex">  
+    <!--侧边栏-->  
+    <div style="width: 300px;" class="baise mg8 mgr8 mgt8"></div>  
+    <!--主区域-->  
+    <div class="flexl flex column">  
+        <!--头部栏-->  
+        <div style="height: 60px" class="baise"></div>  
+        <!--内容区-->  
+        <div class="flexl flex mg8 mgr8 mgt8">  
+            <form action="submit_form.php" method="post">    
+                <label for="name">姓名:</label><br>    
+                <input type="text" id="name" name="name"><br>    
+                <label for="email">邮箱:</label><br>    
+                <input type="email" id="email" name="email"><br>    
+                <input type="submit" value="提交">    
+            </form>    
+        </div>  
+    </div>  
+</body>  
+</html>

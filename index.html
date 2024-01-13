@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六四班同学录</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            background-color: #eee;
+        }
+        * {
+           border: 1px solid black;
+        }
+        .flex{
+            display: flex;
+        }
+        .baise{
+            background-color: white;
+        }
+        .flexl {
+            flex: 1;
+        }
+        .column{
+            flex-direction: column;
+        }
+        .mg8 {
+            margin: 8px;
+        }
+        .mgr8{
+            margin-right: 8px;
+        }
+        .mgt8{
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body class="flex">
+    <!--侧边栏-->
+        <div style="width: 300px; z-index: 2" class="baise mg8 mgr8 mgt8">
+    <!--头像栏-->
+        <div class="flex">
+            <img src="logo.jpg" width="40px" height="40px" style="margin-top: 20px; margin-bottom: 20px; margin-left: 30px;" >
+            <h2 style="margin-left: 30px;">六四班同学录</h2>
+        </div>
+    <!--导航栏-->
+        <div style="height: 60px;">
+            <a href="index.html" style="margin-top: 20px; margin-left: 110px;">首页</a>
+        </div>
+        <div style="height: 60px;">
+            <a href="https://xin-xi-tian-xie.mysxl.cn" style="margin-top: 20px; margin-left: 90px;">信息填写页</a>
+        </div>
+        <div style="height: 60px;">
+           <a href="page2.html" style="margin-top: 20px; margin-left: 90px;">同学信息</a>
+        </div>
+        <div style="height: 60px;">
+            <a href="page3.html" style="margin-top: 20px; margin-left: 90px;">同学留言</a>
+        </div>
+        <div style="height: 60px;">
+            <a href="play.html" style="margin-top: 20px; margin-left: 100px;">小游戏</a>
+        </div>
+        </div>
+    <!--主区域-->
+        <div class="flexl flex column">
+            <h1 style="margin-left: 300px; margin-right: 320px;">欢迎来到2018级4班同学录</h1>
+        </div>
+</body>
+</html>

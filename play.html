@@ -1,0 +1,64 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>点数猜测游戏</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            text-align: center;  
+            margin-top: 50px;  
+        }  
+        #result {  
+            font-size: 24px;  
+            margin-bottom: 20px;  
+        }  
+        #guess {  
+            font-size: 20px;  
+            margin-bottom: 10px;  
+        }  
+    </style>  
+</head>  
+<body>  
+    <h1>猜数字小游戏</h1>  
+    <div id="result"></div>  
+    <input type="text" id="guess" placeholder="请输入猜测的数字">  
+    <button onclick="checkGuess()">确定</button>  
+    <button onclick="resetGame()" style="margin-bottom: 20px;">重新开始</button>  
+  
+    <script>  
+        var targetNumber = Math.floor(Math.random() * 100) + 1; // 生成 1 到 100 之间的随机数  
+        var guessCount = 5; // 猜测次数限制为 5 次  
+        var resultElement = document.getElementById("result"); // 获取结果元素  
+        var guessElement = document.getElementById("guess"); // 获取输入框元素  
+  
+        function checkGuess() {  
+            var userGuess = parseInt(guessElement.value); // 获取用户输入的数字并转换为整数  
+            if (isNaN(userGuess)) { // 如果用户输入的不是数字，则提示错误信息  
+                resultElement.innerHTML = "请输入正确的数字！";  
+                return;  
+            }  
+            if (guessCount === 0) { // 如果已经用完猜测次数，则显示最终结果并结束游戏  
+                resultElement.innerHTML = "游戏结束！正确答案是 " + targetNumber + "。";  
+                return;  
+            }  
+            if (userGuess === targetNumber) { // 如果用户猜对了，则显示胜利信息并结束游戏  
+                resultElement.innerHTML = "恭喜你，猜对了！";  
+                return;  
+            } else if (userGuess > targetNumber) { // 如果用户猜的数字太大，则显示提示信息并减少猜测次数  
+                resultElement.innerHTML = "太大了！";  
+                guessCount--;  
+            } else { // 如果用户猜的数字太小，则显示提示信息并减少猜测次数  
+                resultElement.innerHTML = "太小了！";  
+                guessCount--;  
+            }  
+            guessElement.value = ""; // 清空输入框，以便用户下次输入新的猜测数字  
+        }  
+        function resetGame() {  
+            targetNumber = Math.floor(Math.random() * 100) + 1; // 重置目标数字为新的随机数  
+            guessCount = 5; // 重置猜测次数为5次  
+            resultElement.innerHTML = ""; // 清空结果元素的内容  
+            guessElement.value = ""; // 清空输入框的内容，以便用户输入新的猜测数字  
+        }  
+    </script>  
+</body>  
+</html>                                                                                                                                                         
